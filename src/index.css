@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-ink-100 font-sans antialiased;
+    background-image:
+      radial-gradient(circle at 12% 8%, rgba(16, 185, 129, 0.10), transparent 42%),
+      radial-gradient(circle at 88% 18%, rgba(245, 158, 11, 0.07), transparent 38%),
+      linear-gradient(180deg, #070b0a 0%, #0a1110 100%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-emerald/30 text-ink-100;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-700 rounded-full border-2 border-ink-900;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-600;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-ink-900/80 border border-ink-700/70 rounded-2xl backdrop-blur-sm;
+  }
+  .panel-raised {
+    @apply bg-ink-850/90 border border-ink-700 rounded-2xl shadow-panel backdrop-blur-md;
+  }
+  .hairline {
+    @apply border border-ink-700/60;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(51, 83, 76, 0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(51, 83, 76, 0.10) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .text-gradient-emerald {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 60%, #047857 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@layer utilities {
+  .animate-delay-150 {
+    animation-delay: 150ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
